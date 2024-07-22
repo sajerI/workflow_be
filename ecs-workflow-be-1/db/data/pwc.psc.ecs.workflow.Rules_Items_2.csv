@@ -1,0 +1,5 @@
+parent_id;name;approverType;groupName;assignedTo
+1;laptop;Group;IT;pwcadminIS,pwcadminDU
+1;simcard;Person;;pwcadminIS
+2;laptop;Group;FM;pwcadminDU
+3;simcard;Person;;test23

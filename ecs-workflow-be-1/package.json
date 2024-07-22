@@ -1,0 +1,84 @@
+{
+  "name": "ecs-workflow-be",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": {
+    "node": "^14"
+  },
+  "dependencies": {
+    "@sap/cds": "^5",
+    "@sap/cds-odata-v2-adapter-proxy": "^1.8.6",
+    "@sap/hana-client": "^2.4.177",
+    "@sap/xsenv": "^3.1.1",
+    "@sap/xssec": "^3.2.10",
+    "axios-retry": "^3.2.5",
+    "exceljs": "^4.3.0",
+    "express": "^4",
+    "helmet": "^5.1.0",
+    "node-cron": "^3.0.2",
+    "nodemailer": "^6.9.1",
+    "passport": "^0.5.0",
+    "sap-cf-axios": "^0.3.5",
+    "stream": "^0.0.2"
+  },
+  "devDependencies": {
+    "sqlite3": "^5.0.2"
+  },
+  "overrides": {
+    "express-fileupload": ">=1.4.0",
+    "axios": ">=0.26.0"
+  },
+  "scripts": {
+    "start": "cds run",
+    "deploy": "rm -f mta_archives/* && mbt build && cf deploy mta_archives/*",
+    "watch": "cds watch"
+  },
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "env": {
+      "es2020": true,
+      "node": true,
+      "jest": true,
+      "mocha": true
+    },
+    "globals": {
+      "SELECT": true,
+      "INSERT": true,
+      "UPDATE": true,
+      "DELETE": true,
+      "CREATE": true,
+      "DROP": true,
+      "CDL": true,
+      "CQL": true,
+      "CXL": true,
+      "cds": true
+    },
+    "rules": {
+      "no-console": "off",
+      "require-atomic-updates": "off"
+    }
+  },
+  "cds": {
+    "hana": {
+      "deploy-format": "hdbtable"
+    },
+    "requires": {
+      "db": {
+        "kind": "hana"
+      },
+      "uaa": {
+        "kind": "xsuaa"
+      }
+    },
+    "[development]": {
+      "requires": {
+        "db": {
+          "kind": "sql"
+        }
+      }
+    }
+  }
+}

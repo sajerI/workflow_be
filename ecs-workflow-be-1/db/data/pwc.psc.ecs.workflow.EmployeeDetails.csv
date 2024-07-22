@@ -1,0 +1,4 @@
+userId;seqNumber;itemName;statusHRAdmin;statusApprover;assignedTo;processedBy;noteApprover;approverType;groupName;defaultPrgId;noteAdmin
+10000632;1;Car;DONE;NEW;pwcadminDUK,pwcAdminIS;pwcadminIS;;Person;;GER;Car is needed for a business travel
+10000632;1;Pencil;NEW;;pwcadminDUK,pwcAdminIS;pwcadminDUK;;Person;;GER;Car is needed for a business travel
+

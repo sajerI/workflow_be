@@ -1,0 +1,9 @@
+include:
+    - project: pwc-de/ecs/extern/ecs-tra-templates
+      file: .blackduck_api_upload.yml
+    - project: pwc-de/ecs/devops/utils/ci-templates
+      file: .add_security_operations.yml
+
+stages:
+  - test
+  - blackduck_int

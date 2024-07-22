@@ -1,0 +1,10 @@
+{
+    "jobs": [
+      {
+        "id": "myJob",
+        "name": "My Job",
+        "cron": "* * * * *",
+        "handler": ""
+      }
+    ]
+  }

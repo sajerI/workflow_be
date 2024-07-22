@@ -1,0 +1,58 @@
+{
+    "xsappname": "ecs-workflow-be",
+    "tenant-mode": "dedicated",
+    "scopes": [
+        {
+            "name": "$XSAPPNAME.AppAdminWF",
+            "description": "Create initial rules"
+        },
+        {
+            "name": "$XSAPPNAME.PwCAdminWF",
+            "description": "PwC administrator"
+        },
+        {
+            "name": "$XSAPPNAME.HRAdminWF",
+            "description": "Assign/Edit rules"
+        },
+        {
+            "name": "$XSAPPNAME.ApproverWF",
+            "description": "Approve items (perform actual process)"
+        }
+
+    ],
+    "attributes": [],
+    "role-templates": [
+        {
+            "name": "AppAdminWF",
+            "description": "Administrate the application from the client side, can create a default programs",
+            "scope-references": [
+                "$XSAPPNAME.AppAdminWF"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "PwCAdminWF",
+            "description": "Administrate the app from the PwC side, can do same like AppAdmin but also got access to global settings",
+            "scope-references": [
+                "$XSAPPNAME.PwCAdminWF"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "HRAdminWF",
+            "description": "This is a person responsible for validation/creation of the items and sending them to corresponding approver",
+            "scope-references": [
+                "$XSAPPNAME.HRAdminWF"
+            ],
+            "attribute-references": []
+        },
+        {
+            "name": "ApproverWF",
+            "description": "This is a role to someone who approve and process items assigned to this person",
+            "scope-references": [
+                "$XSAPPNAME.ApproverWF"
+            ],
+            "attribute-references": []
+        }
+    ]
+}
