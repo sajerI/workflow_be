@@ -268,6 +268,7 @@ module.exports = {
             // Add more rows with relevant data
           });
           
+          
           const response = await workbook.xlsx.writeBuffer();
           const excelBase64 = response.toString('base64');
           return { excelBase64 };
